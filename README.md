@@ -52,4 +52,14 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin
 
 ---
 
+## 🚀 TERMINAL DIAGNOSTICS
+
+To view the system status in full LCARS/Ghostbusters ANSI color, run:
+
+```bash
+fastfetch -c ~/.config/fastfetch/config-compact.jsonc
+```
+
+---
+
 > *"I collect spores, molds, and fungus."* - Egon Spengler
