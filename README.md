@@ -1,155 +1,176 @@
-# 🚫👻 ECTOLOGIX88 SYSTEM CONFIGURATION 👻🚫
+# 🚫👻 ECTOLOGIX88 HYPRLAND RICE 👻🚫
 
-> **LCARS SYSTEM 47656** // **USER:** `ectologx88` // **STATUS:** `ONLINE`
+> **LCARS SYSTEM 47656** // **STATUS:** `OPERATIONAL`
 
-Welcome to the **Ecto-Containment Unit**. This repository houses the configuration files for a Fedora 43 Hyprland setup, heavily influenced by PKE Meters, Proton Packs, and 24th-century Starfleet interfaces.
-
----
-
-## 🟢 SYSTEM DIAGNOSTICS (SPECS)
-
-| COMPONENT | SPECIFICATION | STATUS |
-| :--- | :--- | :--- |
-| **CPU** | Intel Core i5-11400H | ⚡ OPERATIONAL |
-| **UNIT** | ASUS TUF Gaming | 🛡️ ARMORED |
-| **OS** | Fedora 43 | 🐧 STABLE |
-| **WM** | Hyprland | 🌀 FLUID |
-| **THEME** | Ghostbusters x LCARS | 🟢 ECTOPLASMIC |
+A Fedora 43 Hyprland configuration merging Ghostbusters aesthetics with Star Trek LCARS interfaces. Features hardware-agnostic setup using chezmoi for easy deployment across systems.
 
 ---
 
-## 📦 REQUIRED PACKAGES
+## 📸 PREVIEW
 
-Before activating the containment grid, ensure your system has the following components installed:
-
-*   **Window Manager:** `hyprland`, `hyprpaper`, `hyprlock`, `hypridle`
-*   **Interface:** `waybar`, `rofi-wayland`, `swaync`, `wlogout`
-*   **Terminal:** `kitty`, `zsh`, `oh-my-zsh`
-*   **Tools:** `chezmoi`, `fastfetch`, `lsd`, `fzf`, `jq`, `wallust`
-*   **Aesthetics:** `nwg-look`, `qt5ct`, `qt6ct`
+*Ghostbusters/LCARS themed Hyprland setup with custom Waybar, rofi, and kitty configurations*
 
 ---
 
-## 🔧 PRE-INSTALLATION (CALIBRATION)
-
-Follow these steps to avoid **cross-stream contamination** before running the main deployment:
-
-1.  **Clone the Data Template:**
-    ```bash
-    cp .chezmoidata.yaml.example .chezmoidata.yaml
-    ```
-2.  **Calibrate Identity:** Edit `.chezmoidata.yaml` and insert your own `name`, `email`, and `monitor` ID.
-3.  **Find Monitor ID:** Run `hyprctl monitors` to identify your primary output (e.g., `eDP-1`, `HDMI-A-1`).
-
----
-
-## ⚡ DEPLOYMENT PROTOCOL
-
-To initialize this containment unit on a fresh Fedora system, execute the following command sequence. 
+## ⚡ QUICK START
 
 ```bash
-# Install chezmoi to local bin
+# Install chezmoi
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin
 
-# Initialize and apply configurations (replace <your-github-username> if forked)
-~/.local/bin/chezmoi init --apply <your-github-username>
+# Deploy (replace with your fork if customized)
+~/.local/bin/chezmoi init --apply ectologx88
 ```
 
-**WARNING:** Do not cross the streams unless absolutely necessary.
+**First time?** See the [Setup Guide](#-setup-guide) below.
 
 ---
 
-## 🎨 AESTHETIC SIGNATURE
+## 🎨 FEATURES
 
-*   **Prompt:** ECTO-LCARS (Orange-Red `#FF4500` accents)
-*   **Wallpaper:** Ghostbusters/LCARS Hybrid
-*   **Bar:** Waybar with Ghostbusters-LCARS profile
-*   **Terminal:** Kitty with custom LCARS color scheme
-
----
-
-## 🔐 SECURITY PROTOCOLS
-
-**ATTENTION:** All Class-5 Full Roaming Vapors (Private Keys, API Tokens, SSH Secrets) have been **SCRUBBED** from this repository.
-
-*   **Secret Management:** Sensitive data is replaced with local includes or 1Password templates.
-*   **Containment:** The `.chezmoiignore` and `.gitignore` protocols ensure no ectoplasmic leakage of private data to the public grid.
+- **🌀 Hyprland:** Smooth Wayland compositor with custom animations
+- **📊 Waybar:** LCARS-styled status bar with Ghostbusters color scheme
+- **🎯 Rofi:** Custom launcher matching the theme
+- **💻 Kitty:** Terminal with LCARS color palette
+- **🔧 Hardware Agnostic:** One config, multiple machines via templating
+- **🔐 Secret Management:** Safe credential handling with local overrides
 
 ---
 
-## 🚀 TERMINAL DIAGNOSTICS
-
-To view the system status in full LCARS/Ghostbusters ANSI color, run:
+## 📦 DEPENDENCIES
 
 ```bash
-fastfetch -c ~/.config/fastfetch/config-compact.jsonc
+# Core (Wayland/Hyprland)
+sudo dnf install hyprland hyprpaper hyprlock hypridle
+
+# Interface
+sudo dnf install waybar rofi-wayland swaync wlogout
+
+# Terminal & Shell
+sudo dnf install kitty zsh
+
+# Tools
+sudo dnf install fastfetch lsd fzf jq
+
+# Theming
+sudo dnf install nwg-look qt5ct qt6ct
 ```
+
+**Post-install:**
+- [oh-my-zsh](https://ohmyz.sh/)
+- [chezmoi](https://www.chezmoi.io/)
 
 ---
 
-## ⚡ CALIBRATION (FORKING & CUSTOMIZATION)
+## 🔧 SETUP GUIDE
 
-To ensure your **Proton Pack** is properly calibrated for your specific theater of operations, follow these re-alignment protocols. Avoid **cross-contamination** of identity data by utilizing our decoupling system.
+### 1. Configure Your System
 
-### 🧪 The `.chezmoidata.yaml` Protocol
+Copy the example data file and customize it:
 
-This containment unit uses a centralized data file to isolate your biological and hardware signatures from the core logic. Before deployment, calibrate your `.chezmoidata.yaml` file in the source root:
+```bash
+cd ~/.local/share/chezmoi
+cp .chezmoidata.yaml.example .chezmoidata.yaml
+nano .chezmoidata.yaml
+```
 
+**Required values:**
 ```yaml
-name: "Egon Spengler"
-email: "egon@ghostbusters.com"
-monitor: "eDP-1" # Your primary monitor ID
+name: "Your Name"
+email: "your@email.com"
+monitor: "eDP-1"  # Run 'hyprctl monitors' to find yours
 ```
 
-### 📡 Hardware Containment Parameters
+### 2. Apply Configuration
 
-The Waybar and Hyprland configurations are now **Hardware Agnostic**. They will automatically synchronize with the `monitor` variable defined in your calibration data, ensuring a stable LCARS interface regardless of your specific hardware model.
+```bash
+chezmoi apply
+```
 
-### 🔐 Classified Ecto-Data (Secrets)
+### 3. Optional: Local Overrides
 
-For Class-5 Full Roaming Vapors (Private API Keys, SSH Secrets), utilize the **Local Isolation** protocol. Create a `~/.zshrc.local` file on your host machine:
+For machine-specific settings or secrets:
 
-*   **Automatic Sourcing:** The system will automatically detect and source this file during shell initialization.
-*   **Anti-Leakage:** This file is strictly governed by the `.chezmoiignore` protocol, ensuring your secrets never enter the public grid.
+```bash
+# Shell customizations
+nano ~/.zshrc.local
 
----
+# Environment variables & API keys
+nano ~/.env
+```
 
-## 🔬 CONTAINMENT UNIT ENHANCEMENT PROTOCOL (TODO)
-
-The following upgrades are queued for future integration to maximize spectral containment efficiency:
-
-### 🟡 Priority: Medium (Nice to Have)
-
-- [ ] **Documentation Enhancement**
-  - [ ] Add `CONTRIBUTING.md` for community containment protocols
-  - [ ] Create visual documentation (screenshots/demo of LCARS interface)
-  - [ ] Add `CHANGELOG.md` for tracking ectoplasmic updates
-
-- [ ] **Automation Systems**
-  - [ ] Implement CI/CD pipeline for syntax validation (auto-detect cross-stream contamination)
-  - [ ] Create `install.sh` script for automated dependency installation
-  - [ ] Add pre-commit hooks for PII detection
-
-- [ ] **Repository Hygiene**
-  - [ ] Add `.gitattributes` for better version control handling
-  - [ ] Consider `git filter-repo` to purge PII from historical containment logs
-
-### 🟢 Priority: Low (Future Enhancements)
-
-- [ ] **Community Features**
-  - [ ] Issue templates for bug reports
-  - [ ] Pull request templates
-  - [ ] GitHub Actions workflow badges
-
-- [ ] **User Experience**
-  - [ ] Interactive setup wizard script
-  - [ ] Auto-detection of monitor IDs during setup
-  - [ ] Colorized installation output
-
-### 📊 **Current Status:** 9/10 ECTOPLASMIC STABILITY
-
-> *"We're ready to believe you!"* - Ghostbusters Tagline
+These files are ignored by chezmoi and won't sync across systems.
 
 ---
 
-> *"I collect spores, molds, and fungus."* - Egon Spengler
+## 🎨 CUSTOMIZATION
+
+### Color Scheme
+
+Main accent: `#FF4500` (Ghostbusters Orange-Red)
+
+Edit in:
+- `dot_zshrc.tmpl` - Shell prompt colors
+- `dot_config/waybar/style/` - Waybar themes
+- `dot_config/kitty/` - Terminal colors
+
+### Monitor Configuration
+
+Hyprland and Waybar automatically use the `monitor` value from `.chezmoidata.yaml`. No hardcoded display names!
+
+---
+
+## 🗂️ STRUCTURE
+
+```
+~/.config/
+├── hypr/          # Hyprland compositor config
+├── waybar/        # Status bar themes & configs
+├── kitty/         # Terminal emulator
+├── rofi/          # Application launcher
+├── swaync/        # Notification center
+└── fastfetch/     # System info display
+```
+
+---
+
+## 🔬 TODO
+
+### 🟡 Medium Priority
+- [ ] Add screenshots/demo video
+- [ ] Create `install.sh` for dependencies
+- [ ] Write `CONTRIBUTING.md`
+
+### 🟢 Low Priority
+- [ ] CI/CD for config validation
+- [ ] Interactive setup wizard
+- [ ] GitHub Actions badges
+
+---
+
+## 🤝 FORKING
+
+1. Fork this repo
+2. Update `.chezmoidata.yaml` with your info (gitignored)
+3. Customize colors/configs to taste
+4. Deploy: `chezmoi init --apply YOUR_USERNAME`
+
+**Tip:** Keep personal data in `.chezmoidata.yaml` and `~/.zshrc.local` - these never get committed.
+
+---
+
+## 📝 CREDITS
+
+- Hyprland config inspired by [JaKooLit's dots](https://github.com/JaKooLit)
+- LCARS design: Star Trek TNG interfaces
+- Theme: Ghostbusters (1984)
+
+---
+
+## 📄 LICENSE
+
+MIT - Use it, modify it, share it.
+
+---
+
+> *"Back off, man. I'm a scientist."* - Dr. Peter Venkman
