@@ -1,6 +1,6 @@
 # 🚫👻 ECTOLOGIX88 SYSTEM CONFIGURATION 👻🚫
 
-> **LCARS SYSTEM 47656** // **USER:** `ectologix88` // **STATUS:** `ONLINE`
+> **LCARS SYSTEM 47656** // **USER:** `ectologx88` // **STATUS:** `ONLINE`
 
 Welcome to the **Ecto-Containment Unit**. This repository houses the configuration files for a Fedora 43 Hyprland setup, heavily influenced by PKE Meters, Proton Packs, and 24th-century Starfleet interfaces.
 
@@ -27,7 +27,7 @@ To initialize this containment unit on a fresh Fedora system, execute the follow
 sh -c "$(curl -fsLS get.chezmoi.io)" -- -b ~/.local/bin
 
 # Initialize and apply configurations
-~/.local/bin/chezmoi init --apply ectologix88
+~/.local/bin/chezmoi init --apply ectologx88
 ```
 
 **WARNING:** Do not cross the streams unless absolutely necessary.
