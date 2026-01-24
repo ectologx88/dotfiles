@@ -1,0 +1,18 @@
+#!/bin/bash
+# 🚫👻 GHOSTBUSTERS AUTOMATED DEPLOYMENT SYSTEM
+# Force Update: Fri Jan 23 09:58:10 PM CST 2026
+
+packages=(
+    zsh git curl wget neovim fastfetch btop fzf ripgrep 
+    bat eza unzip tar hyprland waybar kitty rofi-wayland 
+    swww dunst brightnessctl pavucontrol pamixer grim 
+    slurp wl-clipboard xdg-desktop-portal-hyprland
+    mate-polkit fd-find lazygit luarocks python3-neovim
+    fontawesome-fonts google-noto-emoji-fonts jetbrains-mono-fonts-all
+)
+
+echo "👻 Exterminating remaining bugs... Installing dependencies."
+sudo dnf install -y --skip-unavailable "${packages[@]}"
+
+# Fix Node.js provider (requires npm)
+sudo npm install -g neovim
