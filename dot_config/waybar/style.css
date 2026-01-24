@@ -1,87 +1,122 @@
-/* ---- 💫 Industrial LCARS / Proton Stream Waybar 💫 ---- */
 
-@import "recursive-style-tokens.css";
+/* ===============================
+   LCARS WAYBAR — CLEAN BASELINE
+   =============================== */
 
-/* Proton Stream Animation: Electrical charge flowing through the HUD */
-/* @keyframes proton-stream {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-*/
+/* ---- Color System ---- */
+@define-color bg_main #000000;
+@define-color bg_pill #0b0b0b;
+@define-color bg_pill_alt #141414;
 
+@define-color lcars_orange #ff9f1c;
+@define-color lcars_orange_dim #c97a12;
+
+@define-color text_primary #f2f2f2;
+@define-color text_secondary #b8b8b8;
+@define-color text_muted #7a7a7a;
+
+@define-color critical #ff3b3b;
+
+/* ---- Global Font ---- */
 * {
-    font-family: "JetBrains Mono", "JetBrainsMono Nerd Font", "Fira Code", system-ui, sans-serif;
-    font-size: 11px; /* Slightly smaller for an industrial feel */
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 0;
 }
 
-/* Main Container: Deep black with safety orange electrical flow */
+/* ---- Waybar Container ---- */
 window#waybar {
-    background: transparent; /* 100% Transparency */
-    margin: 6px 12px;
-    padding: 0;
-    border-bottom: 2px solid rgba(255, 179, 0, 0.4); /* Keeping the Safety Orange edge */
-    border-radius: 12px;
-    color: @rg-surface-text;
+    background-color: #000000;
+    border-radius: 14px;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+/* ---- LCARS Pill Primitive ---- */
+#waybar > box > widget {
+    background: @bg_pill;
+    margin: 4px 6px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    border-left: 4px solid @lcars_orange;
 }
 
-/* Diagnostic Pill Styling for Modules */
-#clock, #cpu, #memory, #temperature, #disk, #battery, #network, #bluetooth, #pulseaudio, #tray, #custom-power, #custom-swaync, #custom-dot_update, #custom-nightlight, #group-motherboard {
-    background: rgba(26, 26, 26, 0.65); /* More transparent industrial black */
-    border: 1px solid rgba(255, 179, 0, 0.3);
-    border-radius: 8px; /* Slightly sharper pills */
-    padding: 2px 12px;
-    margin: 4px 4px;
-    min-height: 24px;
-    color: @rg-surface-text;
-}
-
-/* Workspace Navigation */
-#workspaces {
-    background: transparent;
-    padding: 0;
-    margin: 0 6px;
-}
-
+/* ---- Workspaces ---- */
 #workspaces button {
-    padding: 2px 8px;
-    margin: 0 3px;
-    background: rgba(26, 26, 26, 0.4);
-    color: rgba(255, 255, 255, 0.4);
-    border: 1px solid rgba(255, 179, 0, 0.2);
-    border-radius: 6px;
+    background: transparent;
+    color: @text_secondary;
+    padding: 4px 10px;
+    border-radius: 999px;
 }
 
-#workspaces button.focused {
-    color: #ffffff;
-    background: rgba(255, 179, 0, 0.3);
-    border-color: #FFB300; /* Safety Orange glow */
-    box-shadow: inset 0 0 8px rgba(255, 179, 0, 0.3);
+#workspaces button.active {
+    background: @lcars_orange;
+    color: #000000;
+    font-weight: 700;
 }
 
 #workspaces button.urgent {
-    color: #ffffff;
-    border-color: #ff4500;
-    background: rgba(255, 69, 0, 0.4);
+    background: @critical;
+    color: #000000;
 }
 
-/* State Diagnostics */
-#network.disconnected, #pulseaudio.muted {
-    color: #ff4500;
-    border-color: rgba(255, 69, 0, 0.4);
+/* ---- Clock ---- */
+#clock {
+    background: @bg_pill_alt;
+    color: @lcars_orange;
+    font-weight: 700;
 }
 
-#battery.charging, #battery.plugged {
-    color: #5dac7d;
-    border-color: rgba(93, 172, 125, 0.45);
+/* ---- System Indicators ---- */
+#cpu,
+#memory,
+#temperature {
+    color: @text_primary;
+}
+
+#network,
+#pulseaudio,
+#bluetooth,
+#wireplumber {
+    color: @text_secondary;
+}
+
+#network.disconnected {
+    color: @critical;
+}
+
+/* ---- Temperature Critical ---- */
+#temperature.critical {
+    background: @critical;
+    color: #000000;
+}
+
+/* ---- Battery ---- */
+#battery {
+    color: @text_secondary;
 }
 
 #battery.critical:not(.charging) {
-    color: #b44343;
-    border-color: rgba(180, 67, 67, 0.5);
-    background-color: rgba(180, 67, 67, 0.2);
+    background: @critical;
+    color: #000000;
 }
+
+/* ---- Tray ---- */
+#tray {
+    color: @text_secondary;
+}
+
+/* ---- Custom / Utility ---- */
+#custom-menu,
+#custom-power,
+#custom-lock,
+#custom-quit,
+#custom-reboot {
+    color: @lcars_orange;
+    font-weight: 700;
+}
+
+/* ---- Muted / Passive ---- */
+label:focus {
+    background: transparent;
+}
+

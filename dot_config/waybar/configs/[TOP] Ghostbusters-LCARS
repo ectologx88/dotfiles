@@ -14,7 +14,7 @@
   "fixed-center": true,
   "gtk-layer-shell": true,
   "reload_style_on_change": true,
-  "height": 34,
+  "height": 38,
   "spacing": 6,
   "margin-left": 10,
   "margin-right": 10,
