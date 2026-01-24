@@ -1,0 +1,15 @@
+/* Synced from /home/r3crsvint3llgnz/01_Projects/recursive-style-system/tokens/tokens.json */
+@define-color rg-brand-orange #ff6600;
+@define-color rg-brand-orange-strong #ff8533;
+@define-color rg-semantic-info #37a2ae;
+@define-color rg-semantic-example #cb913a;
+@define-color rg-semantic-success #5dac7d;
+@define-color rg-surface-bg0 #000000;
+@define-color rg-surface-bg1 #07090d;
+@define-color rg-surface-panel #090b11;
+@define-color rg-surface-border rgba(255, 255, 255, 0.08);
+@define-color rg-surface-border-hover rgba(255, 255, 255, 0.14);
+@define-color rg-surface-text #e0e0e0;
+@define-color rg-surface-muted #a8afbd;
+@define-color rg-surface-selection rgba(255, 102, 0, 0.28);
+@define-color rg-state-critical #b43c3c;

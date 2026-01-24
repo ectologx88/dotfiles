@@ -1,0 +1,32 @@
+# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+# Hypridle
+# Modified to stop sleep/suspend when plugged in (ACAD)
+
+$iDIR="$HOME/.config/swaync/images/ja.png"
+
+general {
+    lock_cmd = pidof hyprlock || hyprlock # runs hyprlock if it is not already running
+    before_sleep_cmd = loginctl lock-session    # ensures session is locked before going to sleep
+    after_sleep_cmd = hyprctl dispatch dpms on # turn on screen after sleep
+    ignore_dbus_inhibit = false             # whether to ignore dbus-sent idle-inhibit requests
+}
+
+# Warn (9 min)
+listener {
+    timeout = 540
+    on-timeout = notify-send -i $iDIR " You are idle!" # command to run when timeout has passed
+    on-resume = notify-send -i $iDIR " Oh! you're Back" " Hello !!!"  # command to run when activity is detected after timeout has fired.
+}
+
+# Screenlock (10 min) - Keeps your screen secure, even on AC
+listener {
+    timeout = 600
+    on-timeout = loginctl lock-session
+}
+
+# Suspend (15 min) - ONLY ON BATTERY
+# This checks if your charger (ACAD) is NOT online (0) before sleeping
+listener {
+    timeout = 900                                # 15 minutes
+    on-timeout = if [ "$(cat /sys/class/power_supply/ACAD/online)" = "0" ]; then systemctl suspend; fi
+}

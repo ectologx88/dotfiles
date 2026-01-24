@@ -1,0 +1,35 @@
+{
+  "include": [
+    "$HOME/.config/waybar/waybar/Modules",
+    "$HOME/.config/waybar/waybar/ModulesWorkspaces",
+    "$HOME/.config/waybar/waybar/ModulesCustom",
+    "$HOME/.config/waybar/waybar/ModulesGroups",
+    "$HOME/.config/waybar/waybar/UserModules"
+  ],
+  "layer": "top",
+  "position": "top",
+  "hidden-state": "show",
+  "exclusive": true,
+  "passthrough": false,
+  "fixed-center": true,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+  "output": ["eDP-1"],
+  "height": 34,
+  "spacing": 6,
+  "margin-left": 10,
+  "margin-right": 10,
+  "margin-top": 4,
+  "modules-left": [
+    "group/app_drawer",
+    "hyprland/workspaces"
+  ],
+  "modules-center": ["group/center"],
+  "modules-right": [
+    "group/motherboard",
+    "group/control",
+    "battery",
+    "power-profiles-daemon",
+    "custom/power"
+  ]
+}

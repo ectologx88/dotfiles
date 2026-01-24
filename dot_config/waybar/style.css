@@ -1,0 +1,143 @@
+@import "recursive-style-tokens.css";
+
+* {
+  font-family: "JetBrains Mono", "JetBrainsMono Nerd Font", "Fira Code", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+}
+
+/* Transparent bar container */
+window#waybar {
+  background: transparent;
+  margin: 6px 12px;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  color: @rg-surface-text;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: @rg-surface-text;
+}
+
+button:hover {
+  background: @rg-surface-selection;
+  box-shadow: inset 0 -2px @rg-brand-orange;
+}
+
+/* Generic pill styling for modules */
+#clock,
+#cpu,
+#memory,
+#temperature,
+#disk,
+#power-profiles-daemon,
+#battery,
+#custom-power,
+#custom-swaync,
+#custom-dot_update,
+#network,
+#bluetooth,
+#pulseaudio,
+#tray,
+#custom-nightlight,
+#group-app_drawer,
+#group-center,
+#group-control,
+#group-motherboard {
+  background: @rg-surface-panel;
+  border: 1px solid @rg-surface-border;
+  border-radius: 12px;
+  padding: 4px 14px;
+  margin: 0 6px;
+  min-height: 26px;
+  color: @rg-surface-text;
+}
+
+/* Icon-heavy modules: extra horizontal padding */
+#group-control #network,
+#group-control #bluetooth,
+#group-control #pulseaudio,
+#group-center #custom-swaync,
+#group-center #custom-dot_update,
+#custom-power {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#custom-menu,
+#custom-light_dark,
+#custom-file_manager,
+#custom-tty,
+#custom-browser,
+#custom-settings {
+  color: #000000;
+}
+
+/* Workspace pills */
+#workspaces {
+  background: transparent;
+  padding: 0;
+  margin: 0 6px;
+}
+
+#workspaces button {
+  padding: 2px 10px;
+  margin: 0 4px;
+  background: @rg-surface-panel;
+  color: @rg-surface-muted;
+  border: 1px solid @rg-surface-border;
+  border-radius: 12px;
+  min-height: 24px;
+}
+
+#workspaces button.focused {
+  color: @rg-surface-text;
+  border-color: @rg-semantic-info;
+  box-shadow: inset 0 0 0 1px rgba(55, 162, 174, 0.4);
+}
+
+#workspaces button.urgent {
+  color: @rg-surface-text;
+  border-color: @rg-semantic-example;
+  background: rgba(203, 145, 58, 0.18);
+}
+
+/* State colors */
+#network.disconnected,
+#pulseaudio.muted {
+  color: @rg-semantic-example;
+  border-color: rgba(203, 145, 58, 0.45);
+}
+
+#bluetooth.disconnected {
+  color: @rg-surface-muted;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @rg-semantic-success;
+  border-color: rgba(93, 172, 125, 0.45);
+}
+
+#battery.critical:not(.charging) {
+  color: @rg-state-critical;
+  border-color: rgba(180, 67, 67, 0.5);
+}
+
+/* Text alignment consistency */
+#clock,
+#battery,
+#custom-power,
+#custom-swaync,
+#custom-dot_update,
+#network,
+#bluetooth,
+#pulseaudio {
+}
