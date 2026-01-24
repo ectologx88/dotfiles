@@ -56,6 +56,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Load local environment variables and secrets
+
 if [ -f "$HOME/.env" ]; then
+
     source "$HOME/.env"
+
+fi
+
+
+
+# Load local zsh overrides and sensitive data (untracked)
+
+if [ -f "$HOME/.zshrc.local" ]; then
+
+    source "$HOME/.zshrc.local"
+
 fi

@@ -1,0 +1,7 @@
+README.md
+.DS_Store
+*.swp
+*.bak
+.git
+.gitignore
+.zshrc.local
