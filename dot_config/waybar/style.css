@@ -1,143 +1,87 @@
+/* ---- 💫 Industrial LCARS / Proton Stream Waybar 💫 ---- */
+
 @import "recursive-style-tokens.css";
 
+/* Proton Stream Animation: Electrical charge flowing through the HUD */
+/* @keyframes proton-stream {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+*/
+
 * {
-  font-family: "JetBrains Mono", "JetBrainsMono Nerd Font", "Fira Code", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
-  font-size: 12px;
+    font-family: "JetBrains Mono", "JetBrainsMono Nerd Font", "Fira Code", system-ui, sans-serif;
+    font-size: 11px; /* Slightly smaller for an industrial feel */
 }
 
-/* Transparent bar container */
+/* Main Container: Deep black with safety orange electrical flow */
 window#waybar {
-  background: transparent;
-  margin: 6px 12px;
-  padding: 0;
-  border: none;
-  box-shadow: none;
-  color: @rg-surface-text;
+    background: transparent; /* 100% Transparency */
+    margin: 6px 12px;
+    padding: 0;
+    border-bottom: 2px solid rgba(255, 179, 0, 0.4); /* Keeping the Safety Orange edge */
+    border-radius: 12px;
+    color: @rg-surface-text;
 }
 
 window#waybar.hidden {
-  opacity: 0.2;
+    opacity: 0.2;
 }
 
-button {
-  border: none;
-  border-radius: 6px;
-  background: transparent;
-  color: @rg-surface-text;
+/* Diagnostic Pill Styling for Modules */
+#clock, #cpu, #memory, #temperature, #disk, #battery, #network, #bluetooth, #pulseaudio, #tray, #custom-power, #custom-swaync, #custom-dot_update, #custom-nightlight, #group-motherboard {
+    background: rgba(26, 26, 26, 0.65); /* More transparent industrial black */
+    border: 1px solid rgba(255, 179, 0, 0.3);
+    border-radius: 8px; /* Slightly sharper pills */
+    padding: 2px 12px;
+    margin: 4px 4px;
+    min-height: 24px;
+    color: @rg-surface-text;
 }
 
-button:hover {
-  background: @rg-surface-selection;
-  box-shadow: inset 0 -2px @rg-brand-orange;
-}
-
-/* Generic pill styling for modules */
-#clock,
-#cpu,
-#memory,
-#temperature,
-#disk,
-#power-profiles-daemon,
-#battery,
-#custom-power,
-#custom-swaync,
-#custom-dot_update,
-#network,
-#bluetooth,
-#pulseaudio,
-#tray,
-#custom-nightlight,
-#group-app_drawer,
-#group-center,
-#group-control,
-#group-motherboard {
-  background: @rg-surface-panel;
-  border: 1px solid @rg-surface-border;
-  border-radius: 12px;
-  padding: 4px 14px;
-  margin: 0 6px;
-  min-height: 26px;
-  color: @rg-surface-text;
-}
-
-/* Icon-heavy modules: extra horizontal padding */
-#group-control #network,
-#group-control #bluetooth,
-#group-control #pulseaudio,
-#group-center #custom-swaync,
-#group-center #custom-dot_update,
-#custom-power {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-#custom-menu,
-#custom-light_dark,
-#custom-file_manager,
-#custom-tty,
-#custom-browser,
-#custom-settings {
-  color: #000000;
-}
-
-/* Workspace pills */
+/* Workspace Navigation */
 #workspaces {
-  background: transparent;
-  padding: 0;
-  margin: 0 6px;
+    background: transparent;
+    padding: 0;
+    margin: 0 6px;
 }
 
 #workspaces button {
-  padding: 2px 10px;
-  margin: 0 4px;
-  background: @rg-surface-panel;
-  color: @rg-surface-muted;
-  border: 1px solid @rg-surface-border;
-  border-radius: 12px;
-  min-height: 24px;
+    padding: 2px 8px;
+    margin: 0 3px;
+    background: rgba(26, 26, 26, 0.4);
+    color: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 179, 0, 0.2);
+    border-radius: 6px;
 }
 
 #workspaces button.focused {
-  color: @rg-surface-text;
-  border-color: @rg-semantic-info;
-  box-shadow: inset 0 0 0 1px rgba(55, 162, 174, 0.4);
+    color: #ffffff;
+    background: rgba(255, 179, 0, 0.3);
+    border-color: #FFB300; /* Safety Orange glow */
+    box-shadow: inset 0 0 8px rgba(255, 179, 0, 0.3);
 }
 
 #workspaces button.urgent {
-  color: @rg-surface-text;
-  border-color: @rg-semantic-example;
-  background: rgba(203, 145, 58, 0.18);
+    color: #ffffff;
+    border-color: #ff4500;
+    background: rgba(255, 69, 0, 0.4);
 }
 
-/* State colors */
-#network.disconnected,
-#pulseaudio.muted {
-  color: @rg-semantic-example;
-  border-color: rgba(203, 145, 58, 0.45);
+/* State Diagnostics */
+#network.disconnected, #pulseaudio.muted {
+    color: #ff4500;
+    border-color: rgba(255, 69, 0, 0.4);
 }
 
-#bluetooth.disconnected {
-  color: @rg-surface-muted;
-}
-
-#battery.charging,
-#battery.plugged {
-  color: @rg-semantic-success;
-  border-color: rgba(93, 172, 125, 0.45);
+#battery.charging, #battery.plugged {
+    color: #5dac7d;
+    border-color: rgba(93, 172, 125, 0.45);
 }
 
 #battery.critical:not(.charging) {
-  color: @rg-state-critical;
-  border-color: rgba(180, 67, 67, 0.5);
-}
-
-/* Text alignment consistency */
-#clock,
-#battery,
-#custom-power,
-#custom-swaync,
-#custom-dot_update,
-#network,
-#bluetooth,
-#pulseaudio {
+    color: #b44343;
+    border-color: rgba(180, 67, 67, 0.5);
+    background-color: rgba(180, 67, 67, 0.2);
 }
