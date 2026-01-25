@@ -24,16 +24,12 @@
     "group/workspaces_drawer",
     "custom/media"
   ],
-  "modules-center": [
-    "custom/weather",
-    "group/center"
-  ],
+  "modules-center": [],
   "modules-right": [
-    "tray",
     "custom/battery_pill",
     "group/mobo_drawer",
     "group/audio",
-    "custom/nightlight",
-    "custom/power"
+    "tray",
+    "group/clock_hub"
   ]
 }

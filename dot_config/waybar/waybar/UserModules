@@ -6,6 +6,28 @@
 /* IMPORTANT, be mindful with , or ". else waybar will not start */
 
 {
+  "custom/quick_settings": {
+    "format": "󰍜",
+    "tooltip": true,
+    "tooltip-format": "Quick Settings",
+    "on-click": "swaync-client -t -sw"
+  },
+
+  "custom/clock_hub": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 60,
+    "exec": "$HOME/.config/waybar/scripts/waybar-clock-hub.sh",
+    "tooltip": true
+  },
+
+  "custom/airplane": {
+    "format": "󰀝",
+    "tooltip": true,
+    "tooltip-format": "Airplane Mode",
+    "on-click": "$HOME/.config/hypr/scripts/AirplaneMode.sh"
+  },
+
   "custom/media": {
     "format": "{}",
     "return-type": "json",

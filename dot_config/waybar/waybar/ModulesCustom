@@ -177,7 +177,7 @@
 
 "custom/swaync": {
 	"tooltip": true,
-	"tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+	"tooltip-format": "Left Click: Do not Disturb\nRight Click: Do not Disturb",
 	"format": "{} {icon} ",
 	"format-icons": {
 		"notification": "<span foreground='red'><sup></sup></span>",
@@ -192,7 +192,7 @@
 	"return-type": "json",
 	"exec-if": "which swaync-client",
 	"exec": "swaync-client -swb",
-	"on-click": "sleep 0.1 && swaync-client -t -sw",
+	"on-click": "swaync-client -d -sw",
 	"on-click-right": "swaync-client -d -sw",
 	"escape": true,
 },
