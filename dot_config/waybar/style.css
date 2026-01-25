@@ -165,46 +165,46 @@ window#waybar {
 
 /* ---- Tray ---- */
 #tray {
-    color: @text_secondary;
-    padding: 0 4px;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
+  color: @text_secondary;
+  padding: 0 4px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 /* Tray items should never look like pills */
 #tray .module,
 #tray widget,
 #tray image {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
 }
 
 #tray image {
-    -gtk-icon-effect: dim;
-    opacity: 0.85;
+  -gtk-icon-effect: dim;
+  opacity: 0.85;
 }
 
 /* ---- Power / Utility ---- */
 #custom-power,
 #custom-nightlight {
-    color: @lcars_orange;
-    font-weight: 700;
+  color: @lcars_orange;
+  font-weight: 700;
 }
 
 #custom-quick_settings {
-    color: @lcars_orange;
-    font-weight: 700;
+  color: @lcars_orange;
+  font-weight: 700;
 }
 
 #custom-clock_hub {
-    color: @text_primary;
-    font-weight: 700;
+  color: @text_primary;
+  font-weight: 700;
 }
 
 /* Clock hub group: single pill, inner modules are clean */
@@ -238,11 +238,11 @@ window#waybar {
 #group-quick_settings .qs-drawer #pulseaudio,
 #group-quick_settings .qs-drawer #backlight,
 #group-quick_settings .qs-drawer #custom-airplane {
-    background: transparent;
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-shadow: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
 }
 
 /* ---- Muted / Passive ---- */
