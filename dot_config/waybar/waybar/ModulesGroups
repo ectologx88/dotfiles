@@ -51,10 +51,10 @@
 		"transition-left-to-right": true
         },
 	"modules": [
-		"temperature",		
-		"cpu",
 		"memory",
+		"cpu",
 		"disk",
+		"temperature"
 	]
 },
 "group/laptop": {
@@ -116,11 +116,19 @@
 		"custom/dot_update",
 	]
 },
+ "group/clock_hub": {
+   "orientation": "horizontal",
+   "modules": [
+     "custom/weather",
+     "clock#hub",
+     "custom/quick_settings"
+   ]
+ },
  "group/center": {
    "orientation": "inherit",
    "modules": [
-     "custom/swaync",
-     "clock#5"
+     "clock#5",
+     "custom/weather"
    ]
  },
 

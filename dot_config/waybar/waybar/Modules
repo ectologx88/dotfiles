@@ -145,6 +145,14 @@
     "format": "{:%a %d | %I:%M %p}",
 	"format-alt": "{:L%A, %d %B, %Y (%I:%M %p)}",
 	"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
+	"on-click": "swaync-client -t -sw",
+	"on-click-right": "swaync-client -d -sw",
+},
+
+"clock#hub": {
+    "format": "{:%a %d | %I:%M %p}",
+	"format-alt": "{:L%A, %d %B, %Y (%I:%M %p)}",
+	"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
 },
 
 "cpu": {
@@ -329,8 +337,8 @@
 		],
 	},
 	"scroll-step": 5.0,
-	"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
-	"on-click-right": "pavucontrol -t 3",
+	"on-click": "$HOME/.config/hypr/scripts/RofiVolume.sh",
+	"on-click-right": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
 	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
 	"tooltip-format": "{icon} {desc} | {volume}%",
@@ -370,8 +378,8 @@
 },
 
 "tray": {
-	"icon-size": 20,
-	"spacing": 4,
+	"icon-size": 14,
+	"spacing": 3,
 },
 
 "wireplumber": {

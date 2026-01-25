@@ -1,0 +1,131 @@
+/* === LCARS SwayNC === */
+
+@define-color lcars_orange #ff9f1c;
+@define-color bg_main rgba(0, 0, 0, 0.92);
+@define-color bg_card #000000;
+@define-color bg_card_alt #050505;
+@define-color text_primary #f2f2f2;
+@define-color text_muted #b8b8b8;
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Base windows */
+.floating-notifications {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.control-center {
+    background: @bg_main;
+    border-left: 6px solid @lcars_orange;
+    border-radius: 14px;
+    padding: 8px;
+    color: @text_primary;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.5;
+}
+
+/* Notification cards */
+.notification {
+    background: @bg_card;
+    border: 1px solid @lcars_orange;
+    border-left: 4px solid @lcars_orange;
+    border-radius: 12px;
+    padding: 6px 10px;
+    margin: 6px 0;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+    background: @bg_card_alt;
+}
+
+.notification-default-action,
+.notification-action {
+    border-radius: 12px;
+}
+
+.summary,
+.body,
+.time {
+    color: @text_primary;
+    text-shadow: none;
+}
+
+.time {
+    color: @text_muted;
+}
+
+/* Title + clear */
+.widget-title {
+    background: @bg_card_alt;
+    color: @lcars_orange;
+    border-left: 4px solid @lcars_orange;
+    border-radius: 999px;
+    padding: 4px 10px;
+    margin: 6px 4px;
+}
+
+.widget-title>button {
+    background: transparent;
+    color: @text_primary;
+    border: 1px solid @lcars_orange;
+    border-radius: 999px;
+    padding: 2px 8px;
+}
+
+.widget-title>button:hover {
+    background: @lcars_orange;
+    color: #000000;
+}
+
+/* Buttons grid */
+.buttons-grid button {
+    background: @bg_card;
+    border: 1px solid @lcars_orange;
+    border-radius: 999px;
+    color: @text_primary;
+    padding: 6px 10px;
+    margin: 4px;
+}
+
+.buttons-grid button:hover {
+    background: @lcars_orange;
+    color: #000000;
+}
+
+/* Close button */
+.close-button {
+    background: @lcars_orange;
+    color: #000000;
+    border-radius: 999px;
+    margin-top: 5px;
+    margin-right: 5px;
+    padding: 0 8px;
+}
+
+/* Inline reply */
+.inline-reply-entry {
+    background: @bg_card;
+    color: @text_primary;
+    border: 1px solid @lcars_orange;
+    border-radius: 10px;
+}
+
+.inline-reply-button {
+    background: @bg_card;
+    border: 1px solid @lcars_orange;
+    border-radius: 999px;
+    color: @text_primary;
+}
