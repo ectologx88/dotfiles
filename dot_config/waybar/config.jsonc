@@ -1,5 +1,5 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-// ### TOP Simple ## //
+// ### TOP LCARS ## //
 
 {
 "include": [
@@ -7,11 +7,10 @@
   "$HOME/.config/waybar/ModulesWorkspaces",
   "$HOME/.config/waybar/ModulesCustom",
   "$HOME/.config/waybar/ModulesGroups",
-  "$HOME/.config/waybar/UserModules",
+  "$HOME/.config/waybar/UserModules"
   ],
-"layer": "top", 
-"position": "top", 
-//"mode": "dock",
+"layer": "top",
+"position": "top",
 "exclusive": true,
 "passthrough": false,
 "gtk-layer-shell": true,
@@ -20,24 +19,23 @@
 "margin-top": 2,
 
 "modules-left": [	
-	"idle_inhibitor", 
-	"group/mobo_drawer",
+	"group/app_drawer",
 	"hyprland/workspaces#rw",
-	"tray",
-	"mpris", 
+	"tray"
 	],
     
 "modules-center": [
-	"clock#2",
-	"group/notify",
+	"custom/weather",
+	"group/center"
 	],
     
 "modules-right": [
-	"hyprland/window",  
-	"battery",
- 	"group/audio", 
+	"custom/media",
+	"custom/net_state",
+	"custom/battery_pill",
+	"group/mobo_drawer",
+	"group/audio",
 	"custom/nightlight",
-	"custom/power",
-	],
+	"custom/power"
+	]
 }
-

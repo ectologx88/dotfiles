@@ -1,12 +1,11 @@
-
 /* ===============================
-   LCARS WAYBAR — CLEAN BASELINE
+   LCARS WAYBAR — PILL SYSTEM
    =============================== */
 
 /* ---- Color System ---- */
-@define-color bg_main #000000;
-@define-color bg_pill #0b0b0b;
-@define-color bg_pill_alt #141414;
+@define-color bg_main rgba(0, 0, 0, 0.0);
+@define-color bg_pill #000000;
+@define-color bg_pill_alt #050505;
 
 @define-color lcars_orange #ff9f1c;
 @define-color lcars_orange_dim #c97a12;
@@ -16,6 +15,7 @@
 @define-color text_muted #7a7a7a;
 
 @define-color critical #ff3b3b;
+@define-color warning #ffb347;
 
 /* ---- Global Font ---- */
 * {
@@ -27,24 +27,64 @@
 
 /* ---- Waybar Container ---- */
 window#waybar {
-    background-color: #000000;
-    border-radius: 14px;
+    background-color: @bg_main;
+    color: @text_primary;
+    border-radius: 16px;
+    padding: 2px 6px;
 }
 
 /* ---- LCARS Pill Primitive ---- */
-#waybar > box > widget {
+#waybar .module {
     background: @bg_pill;
     margin: 4px 6px;
-    padding: 4px 12px;
+    padding: 4px 12px 4px 14px;
     border-radius: 999px;
-    border-left: 4px solid @lcars_orange;
+    border-left: 6px solid @lcars_orange;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* ---- Group Containers (no pill) ---- */
+#group-app_drawer,
+#group-center,
+#group-audio,
+#group-mobo_drawer,
+#group-control,
+#group-status,
+#group-notify,
+#group-power {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 /* ---- Workspaces ---- */
+#workspaces {
+    background: @bg_pill;
+    padding: 2px 8px 2px 10px;
+    border-radius: 999px;
+    border-left: 6px solid @lcars_orange;
+}
+
+/* Drawer: make expanded list feel like it grows from the active pill */
+#group-workspaces_drawer .ws-drawer .module,
+#group-workspaces_drawer .ws-drawer #workspaces {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+#group-workspaces_drawer .ws-drawer #workspaces button {
+    margin: 0 2px;
+}
+
 #workspaces button {
     background: transparent;
     color: @text_secondary;
-    padding: 4px 10px;
+    padding: 4px 8px;
+    margin: 0 2px;
     border-radius: 999px;
 }
 
@@ -59,58 +99,93 @@ window#waybar {
     color: #000000;
 }
 
-/* ---- Clock ---- */
-#clock {
+/* ---- Clock & Notifications ---- */
+#clock,
+#custom-swaync {
     background: @bg_pill_alt;
     color: @lcars_orange;
     font-weight: 700;
 }
 
-/* ---- System Indicators ---- */
-#cpu,
-#memory,
-#temperature {
+/* ---- Media ---- */
+#custom-media {
     color: @text_primary;
+    border-color: rgba(255, 153, 0, 0.7);
+    border-left-color: @lcars_orange;
 }
 
-#network,
+#custom-media.playing {
+    background: @bg_pill_alt;
+    box-shadow: 0 0 10px rgba(255, 153, 0, 0.25);
+}
+
+/* ---- Network State ---- */
+#custom-conn_pill {
+    color: @text_secondary;
+}
+
+#custom-net_state.warn {
+    background: @bg_pill_alt;
+    color: @lcars_orange;
+    border-color: rgba(255, 153, 0, 0.8);
+    border-left-color: @lcars_orange;
+}
+
+#custom-net_state.critical {
+    background: @critical;
+    color: #000000;
+    border-color: @critical;
+}
+
+/* ---- Battery Pill ---- */
+#custom-battery_pill.charging {
+    background: @bg_pill_alt;
+    color: @lcars_orange;
+    border-color: rgba(255, 153, 0, 0.8);
+    border-left-color: @lcars_orange;
+}
+
+#custom-battery_pill.warning {
+    color: @warning;
+    border-color: @warning;
+    border-left-color: @warning;
+}
+
+#custom-battery_pill.critical {
+    background: @critical;
+    color: #000000;
+    border-color: @critical;
+}
+
+/* ---- Audio ---- */
 #pulseaudio,
-#bluetooth,
-#wireplumber {
+#pulseaudio\#microphone {
     color: @text_secondary;
-}
-
-#network.disconnected {
-    color: @critical;
-}
-
-/* ---- Temperature Critical ---- */
-#temperature.critical {
-    background: @critical;
-    color: #000000;
-}
-
-/* ---- Battery ---- */
-#battery {
-    color: @text_secondary;
-}
-
-#battery.critical:not(.charging) {
-    background: @critical;
-    color: #000000;
 }
 
 /* ---- Tray ---- */
 #tray {
     color: @text_secondary;
+    padding: 2px 6px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
-/* ---- Custom / Utility ---- */
-#custom-menu,
+/* Tray items should never look like pills */
+#tray .module,
+#tray widget,
+#tray image {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---- Power / Utility ---- */
 #custom-power,
-#custom-lock,
-#custom-quit,
-#custom-reboot {
+#custom-nightlight {
     color: @lcars_orange;
     font-weight: 700;
 }
@@ -119,4 +194,3 @@ window#waybar {
 label:focus {
     background: transparent;
 }
-

@@ -21,6 +21,18 @@
 		"custom/settings",
 	]
 },
+"group/workspaces_drawer": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 250,
+		"children-class": "ws-drawer",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"hyprland/workspaces#active",
+		"hyprland/workspaces#rw"
+	]
+},
 "group/motherboard": {
 	"orientation": "horizontal",
 	"modules": [

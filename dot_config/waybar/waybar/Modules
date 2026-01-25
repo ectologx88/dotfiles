@@ -14,8 +14,8 @@
 	],
 	//"thermal-zone": 0,
 	"critical-threshold": 82,
-	"format-critical": "{temperatureC}°C {icon}",
-	"format": "{temperatureC}°C {icon}",
+	"format-critical": "{temperatureF}°F {icon}",
+	"format": "{temperatureF}°F {icon}",
 	"format-icons": [
 		"󰈸"
 	],
@@ -85,9 +85,9 @@
 },
 
 "bluetooth": {
-	"format": " ",
-	"format-disabled": "󰂳",
-	"format-connected": "󰂱 {num_connections}",
+	"format": " BT",
+	"format-disabled": "󰂳 BT",
+	"format-connected": "󰂱 BT",
 	"tooltip-format": " {device_alias}",
 	"tooltip-format-connected": "{device_enumerate}",
 	"tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
@@ -264,9 +264,9 @@
 
 "network": {
 	"format": "{ifname}",
-	"format-wifi": "{icon}",
-	"format-ethernet": "󰌘",
-	"format-disconnected": "󰌙",
+	"format-wifi": "{icon} NET",
+	"format-ethernet": "󰌘 ETH",
+	"format-disconnected": "󰌙 NET",
 	"tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
 	"format-linked": "󰈁 {ifname} (No IP)",
 	"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",

@@ -11,7 +11,7 @@
     "return-type": "json",
     "hide-empty": true,
     "exec-if": "playerctl status 2>/dev/null | grep -q Playing",
-    "exec": "playerctl metadata --format '{\"text\":\"{{artist}}  -  {{title}}\",\"tooltip\":\"{{playerName}}: {{artist}}  -  {{title}}\",\"class\":\"playing\"}'",
+    "exec": "playerctl metadata --format '{\"text\":\"{{artist}} - {{title}}\",\"tooltip\":\"{{playerName}}: {{artist}} - {{title}}\",\"class\":\"playing\"}'",
     "interval": 2,
     "max-length": 40,
     "on-click": "playerctl previous",
@@ -20,6 +20,17 @@
     "scroll-step": 5.0,
     "on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
     "on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec"
+  },
+
+  "custom/net_state": {
+    "format": "{}",
+    "return-type": "json",
+    "hide-empty": true,
+    "exec": "$HOME/.config/waybar/scripts/waybar-net-state.sh",
+    "interval": 5,
+    "tooltip": true,
+    "on-click": "$HOME/.config/hypr/scripts/RofiWifi.sh",
+    "on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nmtui"
   },
 
   "custom/battery_pill": {

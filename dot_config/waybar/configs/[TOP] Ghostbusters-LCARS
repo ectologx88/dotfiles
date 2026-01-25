@@ -14,21 +14,26 @@
   "fixed-center": true,
   "gtk-layer-shell": true,
   "reload_style_on_change": true,
-  "height": 38,
+  "height": 44,
   "spacing": 6,
   "margin-left": 10,
   "margin-right": 10,
   "margin-top": 4,
   "modules-left": [
     "group/app_drawer",
-    "hyprland/workspaces"
+    "group/workspaces_drawer",
+    "custom/media"
   ],
-  "modules-center": ["group/center"],
+  "modules-center": [
+    "custom/weather",
+    "group/center"
+  ],
   "modules-right": [
-    "group/motherboard",
-    "group/control",
-    "battery",
-    "power-profiles-daemon",
+    "tray",
+    "custom/battery_pill",
+    "group/mobo_drawer",
+    "group/audio",
+    "custom/nightlight",
     "custom/power"
   ]
 }
