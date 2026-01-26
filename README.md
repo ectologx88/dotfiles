@@ -6,7 +6,9 @@ A Fedora 43 Hyprland configuration merging Ghostbusters aesthetics with Star Tre
 
 ---
 
-## 📸 PREVIEW
+![desktop](image.png)
+
+![alt text](image.png)
 
 *Ghostbusters/LCARS themed Hyprland setup with custom Waybar, rofi, and kitty configurations*
 
