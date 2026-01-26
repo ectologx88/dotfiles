@@ -177,7 +177,7 @@
 
 "custom/swaync": {
 	"tooltip": true,
-	"tooltip-format": "Left Click: Do not Disturb\nRight Click: Do not Disturb",
+	"tooltip-format": "Click: Do not Disturb",
 	"format": "{} {icon} ",
 	"format-icons": {
 		"notification": "<span foreground='red'><sup></sup></span>",

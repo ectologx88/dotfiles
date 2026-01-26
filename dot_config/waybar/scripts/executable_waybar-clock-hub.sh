@@ -6,6 +6,8 @@ calendar_text="$(cal)"
 
 weather_text=""
 
+weather_tooltip=""
+
 # Prefer cached simple text to avoid network stalls
 cache="$HOME/.cache/.weather_cache"
 if [ -f "$cache" ]; then
