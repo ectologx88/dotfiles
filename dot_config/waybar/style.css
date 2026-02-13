@@ -48,6 +48,7 @@ window#waybar {
 #group-center,
 #group-audio,
 #group-mobo_drawer,
+#group-connections,
 #group-control,
 #group-status,
 #group-notify,
@@ -155,6 +156,35 @@ window#waybar {
   background: @critical;
   color: #000000;
   border-color: @critical;
+}
+
+/* ---- Connections drawer ---- */
+#group-connections .module {
+  background: transparent;
+  margin: 0;
+  padding: 0 4px;
+  border: none;
+  box-shadow: none;
+}
+
+#network {
+  color: @text_secondary;
+}
+
+#network.wifi {
+  color: @lcars_orange;
+}
+
+#network.disconnected {
+  color: @text_muted;
+}
+
+#bluetooth {
+  color: @text_muted;
+}
+
+#bluetooth.connected {
+  color: @lcars_orange;
 }
 
 /* ---- Audio ---- */

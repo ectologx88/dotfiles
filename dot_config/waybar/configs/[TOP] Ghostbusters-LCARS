@@ -6,6 +6,8 @@
     "$HOME/.config/waybar/waybar/ModulesGroups",
     "$HOME/.config/waybar/waybar/UserModules"
   ],
+  "on-sigusr1": "hide",
+  "on-sigusr2": "show",
   "layer": "top",
   "position": "top",
   "hidden-state": "show",
@@ -29,6 +31,7 @@
     "custom/battery_pill",
     "group/mobo_drawer",
     "group/audio",
+    "group/connections",
     "tray",
     "group/clock_hub"
   ]

@@ -85,9 +85,9 @@
 },
 
 "bluetooth": {
-	"format": " BT",
-	"format-disabled": "󰂳 BT",
-	"format-connected": "󰂱 BT",
+	"format": "",
+	"format-disabled": "󰂳",
+	"format-connected": "󰂱",
 	"tooltip-format": " {device_alias}",
 	"tooltip-format-connected": "{device_enumerate}",
 	"tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
@@ -272,9 +272,9 @@
 
 "network": {
 	"format": "{ifname}",
-	"format-wifi": "{icon} NET",
-	"format-ethernet": "󰌘 ETH",
-	"format-disconnected": "󰌙 NET",
+	"format-wifi": "{icon}",
+	"format-ethernet": "󰌘",
+	"format-disconnected": "󰌙",
 	"tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
 	"format-linked": "󰈁 {ifname} (No IP)",
 	"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
@@ -284,7 +284,7 @@
 	"format-icons": [
 		"󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
 	],
-	"on-click": "$HOME/.config/hypr/scripts/RofiWifi.sh",
+	"on-click": "airctl",
 	"on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nmtui"
 },
 
