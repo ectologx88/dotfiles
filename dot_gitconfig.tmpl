@@ -1,5 +1,11 @@
 [user]
-	name = {{ .name }}
-	email = {{ .email }}
+        name = {{ .name }}
+        email = {{ .email }}
 [core]
-	autocrlf = input
+        autocrlf = input
+[credential "https://github.com"]
+        helper = 
+        helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+        helper = 
+        helper = !/usr/bin/gh auth git-credential
